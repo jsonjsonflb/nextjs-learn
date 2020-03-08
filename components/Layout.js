@@ -1,3 +1,5 @@
+import React, { Fragment } from 'react';
+
 import Header from './Header';
 
 const layoutStyle = {
@@ -7,10 +9,17 @@ const layoutStyle = {
 };
 
 const Layout = props => (
-  <div style={layoutStyle}>
-    <Header />
-    {/* {props.children} */}
-  </div>
+  <Fragment>
+    <div style={layoutStyle}>
+      <Header />
+      {props.children}
+    </div>
+    <style jsx>{`
+      p {
+        font-size: 20px;
+      }
+    `}</style>
+  </Fragment>
 );
 
 export default Layout;
